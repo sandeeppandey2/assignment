@@ -33,9 +33,9 @@ jobs:
        uses: SonarSource/sonarcloud-github-action@v1.4
        with:
     # Additional arguments to the sonarcloud scanner
-        args: 
-            -Dsonar.tests=tests/
-            -Dsonar.verbose=true
+#         args: 
+#             -Dsonar.tests=tests/
+#             -Dsonar.verbose=true
     # Set the sonar.projectBaseDir analysis property
         projectBaseDir: .
   
