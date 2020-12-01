@@ -1,0 +1,13 @@
+logging:
+  level:
+    org.springframework: ERROR
+    com.example.demo: DEBUG
+
+server:
+  port : 8090
+
+spring:
+  profiles:
+    active: dev
+  main:
+    banner-mode: off
