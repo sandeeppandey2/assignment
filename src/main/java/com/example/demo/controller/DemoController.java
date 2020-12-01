@@ -29,7 +29,7 @@ public class DemoController {
 
         } catch (RuntimeException runtimeException) {
             log.error("Runtime Exception Occurred" + runtimeException.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error in area of triangle method correct your input" +illegalArgumentException.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error in area of triangle method correct your input" +runtimeException.getMessage());
         }
 
         return ResponseEntity.ok(triangleArea);
