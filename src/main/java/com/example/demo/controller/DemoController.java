@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
+/*Demo Controller class to serve user requests*/
 @RestController
 @Slf4j
 @RequestMapping("/api/demo")
@@ -21,21 +23,27 @@ public class DemoController {
     @Autowired
     private DisplayNumberService displayNumbers;
 
+    /*  Rest Method to get Area of Triangle
+    * @Param input double values
+    */
     @GetMapping("/areaOfTriangle/{height}/{base}")
     public ResponseEntity<Object> getAreaOftriangle(@PathVariable("height") double height, @PathVariable("base") double base) {
         AreaOfTriangle triangleArea = new AreaOfTriangle();
         try {
             triangleArea.setTriangleArea(triangleService.getAreaOfTriangle(height, base));
 
-        } catch (RuntimeException runtimeException) {
+        } catch (IllegalArgumentException illegalArgumentException) {
             log.error("Runtime Exception Occurred" + runtimeException.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error in area of triangle method correct your input" +runtimeException.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error in area of triangle method correct your input" +illegalArgumentException.getMessage());
         }
 
         return ResponseEntity.ok(triangleArea);
 
     }
 
+    /*  Rest Method to get Sequence of numbers
+    * @Param int - input parameter
+    */
     @GetMapping("numberSequence/{number}")
     public ResponseEntity<Object> getNumbersInSequence(@PathVariable("number") int number) {
         NumberSequence numberSequence = new NumberSequence();

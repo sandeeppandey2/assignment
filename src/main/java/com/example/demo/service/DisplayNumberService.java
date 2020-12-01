@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/*Service class to display numbers*/
 @Component
 public class DisplayNumberService {
 
