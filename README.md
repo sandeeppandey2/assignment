@@ -13,7 +13,7 @@
 
 4.check if application started successfully
 
-#Acces API.
+##Acces API.
 
 1.Get Sequence of Numbers
 
@@ -48,7 +48,8 @@ Response:
     "triangleArea": 100.0
 }
 
-**Pipeline
+
+##Pipeline
 
 *created github pipleline to build and run test
 
