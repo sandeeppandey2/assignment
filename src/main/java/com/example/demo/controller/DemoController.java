@@ -33,7 +33,7 @@ public class DemoController {
             triangleArea.setTriangleArea(triangleService.getAreaOfTriangle(height, base));
 
         } catch (IllegalArgumentException illegalArgumentException) {
-            log.error("Runtime Exception Occurred" + runtimeException.getMessage());
+            log.error("Runtime Exception Occurred" + illegalArgumentException.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error in area of triangle method correct your input" +illegalArgumentException.getMessage());
         }
 
